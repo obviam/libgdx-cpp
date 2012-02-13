@@ -10,19 +10,19 @@
 
 @implementation IOSApplicationDelegate
 
-@synthesize window = _window;
+@synthesize m_window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [application setStatusBarHidden:YES];
+    [app setStatusBarHidden:YES];
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     self.window = [[UIWindow alloc] initWithFrame:screenBounds];
-//    view = [[GLView alloc] initWithFrame:screenBounds];
+    m_view = [[GLView alloc] initWithFrame:screenBounds];
     
-//    [self.window addSubview:view];
-    [self.window makeKeyAndVisible];
+    [self.m_window addSubview:m_view];
+    [self.m_window makeKeyAndVisible];
 
     return YES;
 }
@@ -64,6 +64,13 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+- (void)dealloc
+{
+    [m_view release];
+    [m_window release];
+    [super dealloc];
 }
 
 @end

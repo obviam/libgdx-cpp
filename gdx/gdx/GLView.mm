@@ -90,6 +90,11 @@ const bool forceES1 = false;
 
 }
 
+void drawView (void * glViewInstance, float elapsed) {
+    
+}
+
+
 - (void) drawView: (CADisplayLink*) displayLink
 {
     if (displayLink != nil) {
@@ -101,7 +106,6 @@ const bool forceES1 = false;
     
     [context presentRenderbuffer:GL_RENDERBUFFER];
 }
-
 
 - (void)dealloc
 {

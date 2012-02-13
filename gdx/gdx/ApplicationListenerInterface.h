@@ -9,13 +9,13 @@
 #ifndef gdx_ApplicationListenerInterface_h
 #define gdx_ApplicationListenerInterface_h
 
-namespace Gdx
+namespace gdx
 {
 
-    class ApplicationListenerInterface
-    {
-      public:
-        
+class ApplicationListenerInterface
+{
+    public:
+    
         /** Called when the {@link Application} is first created. */
         virtual void create() = 0;
         
@@ -43,7 +43,7 @@ namespace Gdx
         virtual void dispose() = 0;
 
         virtual ~ApplicationListenerInterface() {}
-    }
+};
 
 }
 

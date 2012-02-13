@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "GLView.h"
+#import "IOSApplication.cpp"
 
 @interface IOSApplicationDelegate : NSObject <UIApplicationDelegate> 
 {
-    UIWindow*   window;
-    GLView*     view;
+    UIWindow*               m_window;
+    GLView*                 m_view;
+    gdx::IOSApplication*    application;
 }
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow *m_window;
 
 @end

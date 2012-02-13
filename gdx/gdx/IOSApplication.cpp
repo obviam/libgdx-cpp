@@ -8,8 +8,39 @@
 
 #include <iostream>
 #include "ApplicationInterface.h"
+#include "ApplicationListenerInterface.h"
+#include "IOSGraphics.cpp"
 
-class IOSApplication : public Gdx::ApplicationInterface
+namespace gdx
 {
-    
+
+class IOSApplicationConfiguration
+{
+public: 
+    bool useGLES20;
+    bool useAccelerometer;
+    bool hideStatusBar;
 };
+    
+class IOSApplication : public ApplicationInterface
+{
+ 
+private:
+    const ApplicationListenerInterface* listener;
+    
+public:
+    IOSApplication();
+    void initialize(ApplicationListenerInterface* listener, IOSApplicationConfiguration* config);
+};
+
+// ~ implementations
+IOSApplication::IOSApplication()
+{
+};
+
+void IOSApplication::initialize(ApplicationListenerInterface* listener, IOSApplicationConfiguration* config)
+{
+    graphics = new IOSGraphics();
+};
+
+}

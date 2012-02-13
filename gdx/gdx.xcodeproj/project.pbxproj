@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0205253E14E95A8F00C8ED2C /* ApplicationAdapter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0205253D14E95A8F00C8ED2C /* ApplicationAdapter.cpp */; };
 		02D1F8FB14E172E700100F01 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D1F8FA14E172E700100F01 /* UIKit.framework */; };
 		02D1F8FD14E172E700100F01 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D1F8FC14E172E700100F01 /* Foundation.framework */; };
 		02D1F8FF14E172E700100F01 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D1F8FE14E172E700100F01 /* CoreGraphics.framework */; };
@@ -17,9 +18,11 @@
 		02D1F91D14E189F800100F01 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D1F91C14E189F800100F01 /* QuartzCore.framework */; };
 		02D1F91F14E18A0A00100F01 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02D1F91E14E18A0A00100F01 /* OpenGLES.framework */; };
 		02D1F92114E18C4800100F01 /* GLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 02D1F92014E18C4800100F01 /* GLView.mm */; };
+		02D1F92414E482D800100F01 /* IOSGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 02D1F92314E482D800100F01 /* IOSGraphics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0205253D14E95A8F00C8ED2C /* ApplicationAdapter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplicationAdapter.cpp; sourceTree = "<group>"; };
 		02D1F8F614E172E700100F01 /* gdx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gdx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D1F8FA14E172E700100F01 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		02D1F8FC14E172E700100F01 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -37,6 +40,11 @@
 		02D1F91C14E189F800100F01 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		02D1F91E14E18A0A00100F01 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		02D1F92014E18C4800100F01 /* GLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GLView.mm; sourceTree = "<group>"; };
+		02D1F92214E2ABB500100F01 /* GraphicsInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsInterface.h; sourceTree = "<group>"; };
+		02D1F92314E482D800100F01 /* IOSGraphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOSGraphics.cpp; sourceTree = "<group>"; };
+		02D1F92D14E5861000100F01 /* InputProcessorInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputProcessorInterface.h; sourceTree = "<group>"; };
+		02D1F92E14E586ED00100F01 /* ScreenInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenInterface.h; sourceTree = "<group>"; };
+		02D1F92F14E590CE00100F01 /* GLViewInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLViewInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +95,20 @@
 		02D1F90014E172E700100F01 /* gdx */ = {
 			isa = PBXGroup;
 			children = (
+				0205253D14E95A8F00C8ED2C /* ApplicationAdapter.cpp */,
 				02D1F91714E1731A00100F01 /* ApplicationInterface.h */,
 				02D1F91814E1731A00100F01 /* ApplicationListenerInterface.h */,
 				02D1F90914E172E700100F01 /* IOSApplicationDelegate.h */,
 				02D1F90A14E172E700100F01 /* IOSApplicationDelegate.mm */,
 				02D1F91914E1831A00100F01 /* IOSApplication.cpp */,
-				02D1F90114E172E700100F01 /* Supporting Files */,
+				02D1F92314E482D800100F01 /* IOSGraphics.cpp */,
 				02D1F91B14E1898D00100F01 /* GLView.h */,
 				02D1F92014E18C4800100F01 /* GLView.mm */,
+				02D1F92F14E590CE00100F01 /* GLViewInterface.h */,
+				02D1F92214E2ABB500100F01 /* GraphicsInterface.h */,
+				02D1F92D14E5861000100F01 /* InputProcessorInterface.h */,
+				02D1F92E14E586ED00100F01 /* ScreenInterface.h */,
+				02D1F90114E172E700100F01 /* Supporting Files */,
 			);
 			path = gdx;
 			sourceTree = "<group>";
@@ -175,6 +189,8 @@
 				02D1F90B14E172E700100F01 /* IOSApplicationDelegate.mm in Sources */,
 				02D1F91A14E1831A00100F01 /* IOSApplication.cpp in Sources */,
 				02D1F92114E18C4800100F01 /* GLView.mm in Sources */,
+				02D1F92414E482D800100F01 /* IOSGraphics.cpp in Sources */,
+				0205253E14E95A8F00C8ED2C /* ApplicationAdapter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +296,7 @@
 				02D1F91614E172E700100F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

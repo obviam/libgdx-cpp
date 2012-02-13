@@ -9,19 +9,27 @@
 #ifndef gdx_Application_h
 #define gdx_Application_h
 
-namespace Gdx
+#include "GraphicsInterface.h"
+
+namespace gdx
 {
-    class ApplicationInterface
-    {
-      public:
-        enum ApplicationType {
-            Desktop, 
-            iOS,
-            Android
-        };
-        
-        virtual ~ApplicationInterface() {}
+
+class ApplicationInterface
+{
+public:
+    enum ApplicationType {
+        Desktop,
+        iOS,
+        Android
     };
+    virtual GraphicsInterface* getGraphics() = 0;
+    
+    virtual ~ApplicationInterface() {}
+    
+protected:
+    GraphicsInterface* graphics;
+};
+
 }
 
 #endif
