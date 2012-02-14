@@ -14,13 +14,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self->m_app = gdx::createIOSApplication();
-    
     [application setStatusBarHidden:YES];
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
     self.window = [[UIWindow alloc] initWithFrame:screenBounds];
+    
+    // create the listener
+    gdx::ApplicationListenerInterface *listener = gdx::createApplicationAdapter();
+    m_view = [[GLView alloc] initWithFrame:screenBounds applicationListener:listener];
     m_view = [[GLView alloc] initWithFrame:screenBounds];
     
     [self.m_window addSubview:m_view];

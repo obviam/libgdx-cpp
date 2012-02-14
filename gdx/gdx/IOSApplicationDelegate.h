@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "GLView.h"
 #import "ApplicationInterface.h"
+#import "ApplicationListenerInterface.h"
 
 @interface IOSApplicationDelegate : NSObject <UIApplicationDelegate> 
 {

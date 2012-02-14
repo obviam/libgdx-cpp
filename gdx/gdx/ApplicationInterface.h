@@ -10,6 +10,7 @@
 #define gdx_Application_h
 
 #include "GraphicsInterface.h"
+#include "ApplicationListenerInterface.h"
 
 namespace gdx
 {
@@ -22,7 +23,16 @@ enum ApplicationType {
     kAndroid
 };
 
-class ApplicationInterface* createIOSApplication();
+class ApplicationConfiguration
+{
+public: 
+    bool useGLES20;
+    bool useAccelerometer;
+    bool hideStatusBar;
+    // TODO - extend with what can be configured
+};
+
+class ApplicationInterface* createIOSApplication(ApplicationListenerInterface* listener, ApplicationConfiguration* config);
     
 class ApplicationInterface
 {

@@ -7,21 +7,31 @@
 //
 
 #include <iostream>
-#include "ApplicationInterface.h"
+#include "ApplicationListenerInterface.h"
 
 namespace gdx
 {
-
+    class ApplicationAdapter;
+    
 /** Convenience implementation of {@link ApplicationListener}. Derive from this and only override what you need. **/
-class ApplicationAdapter : ApplicationInterface
+class ApplicationAdapter : public ApplicationListenerInterface
 {
 public:
+    ApplicationAdapter() {};
     void create() {};
     void resize(int width, int height) {};
     void render() {};
     void pause() {};
     void resume() {};
     void dispose() {};
+    ~ApplicationAdapter() {
+        dispose();
+    }
 };
+
+class ApplicationListenerInterface* createApplicationAdapter()
+{
+    return new ApplicationAdapter();
+}
 
 }

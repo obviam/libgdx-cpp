@@ -20,8 +20,13 @@ const bool forceES1 = false;
     return [CAEAGLLayer class];
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame applicationListener:(gdx::ApplicationListenerInterface*)listener
 {
+    gdx::ApplicationConfiguration *config = new gdx::ApplicationConfiguration();
+    config->useGLES20 = true;
+    
+    self->app = gdx::createIOSApplication(listener, config);
+    
     if ((self = [super initWithFrame:frame])) {
         CAEAGLLayer* eaglLayer = (CAEAGLLayer*) super.layer;
         eaglLayer.opaque = YES;
@@ -90,16 +95,11 @@ const bool forceES1 = false;
 
 }
 
-void drawView (void * glViewInstance, float elapsed) {
-    
-}
-
-
 - (void) drawView: (CADisplayLink*) displayLink
 {
     if (displayLink != nil) {
-//        float elapsedSeconds = displayLink.timestamp - timestamp;
-//        timestamp = displayLink.timestamp;
+        float elapsedSeconds = displayLink.timestamp - timestamp;
+        timestamp = displayLink.timestamp;
     }
     
     // rendering needs to come here

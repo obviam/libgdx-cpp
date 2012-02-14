@@ -88,14 +88,14 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          isPathRelative = "1"
-         filePath = "gdx/gdx/GLView.mm"
-         timestampString = "350848669.099881"
+         filePath = "gdx/gdx/ApplicationAdapter.cpp"
+         timestampString = "350926194.750584"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "101"
-         endingLineNumber = "101"
-         landmarkName = "-drawView:"
-         landmarkType = "5">
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "class ApplicationAdapter"
+         landmarkType = "3">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

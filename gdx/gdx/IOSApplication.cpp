@@ -13,14 +13,6 @@
 
 namespace gdx
 {
-
-class IOSApplicationConfiguration
-{
-public: 
-    bool useGLES20;
-    bool useAccelerometer;
-    bool hideStatusBar;
-};
     
 class IOSApplication : public ApplicationInterface
 {
@@ -30,13 +22,15 @@ private:
     
 public:
     IOSApplication();
-    void initialize(ApplicationListenerInterface* listener, IOSApplicationConfiguration* config);
+    void initialize(ApplicationListenerInterface* listener, ApplicationConfiguration* config);
     GraphicsInterface* getGraphics();
 };
 
-ApplicationInterface* createIOSApplication()
+ApplicationInterface* createIOSApplication(ApplicationListenerInterface* listener, ApplicationConfiguration* config)
 {
-    return new IOSApplication();
+    IOSApplication* app = new IOSApplication();
+    app->initialize(listener, config);
+    return app;
 }
     
 // ~ implementations
@@ -45,7 +39,7 @@ IOSApplication::IOSApplication()
     printf("IOSApplication created\n");
 };
 
-void IOSApplication::initialize(ApplicationListenerInterface* listener, IOSApplicationConfiguration* config)
+void IOSApplication::initialize(ApplicationListenerInterface* listener, ApplicationConfiguration* config)
 {
 //    graphics = createIOSGraphics(640, 960);
 };

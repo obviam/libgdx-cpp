@@ -12,14 +12,16 @@
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
-#import "GraphicsInterface.h"
+#import "ApplicationInterface.h"
 
 @interface GLView : UIView {
 @private
-    EAGLContext * context;
-    float       timestamp;
+    EAGLContext*                context;
+    float                       timestamp;
+    gdx::ApplicationInterface*  app;
 }
 
+- (id)initWithFrame:(CGRect)frame applicationListener:(gdx::ApplicationListenerInterface*)listener;
 - (void) drawView: (CADisplayLink*)displayLink;
 
 @end
