@@ -23,5 +23,7 @@
 
 - (id)initWithFrame:(CGRect)frame applicationListener:(gdx::ApplicationListenerInterface*)listener;
 - (void) drawView: (CADisplayLink*)displayLink;
+- (void) pause;
+- (void) resume;
 
 @end

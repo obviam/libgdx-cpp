@@ -11,7 +11,6 @@
 
 namespace gdx
 {
-    class ApplicationAdapter;
     
 /** Convenience implementation of {@link ApplicationListener}. Derive from this and only override what you need. **/
 class ApplicationAdapter : public ApplicationListenerInterface

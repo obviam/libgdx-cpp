@@ -30,10 +30,10 @@ private:
 	float   ppcX;
 	float   ppcY;
 	float   density;
-protected:
-    IOSApplication* app;
+//protected:
+//    IOSApplication* app;
 public:
-    IOSGraphics(int width, int height, IOSApplication * app);
+    IOSGraphics(int width, int height);
     ~IOSGraphics();
     bool const isGL11Available()
     {
@@ -132,18 +132,17 @@ public:
     };
 };
     
-IOSGraphics::IOSGraphics(int width, int height, IOSApplication * app)
+IOSGraphics::IOSGraphics(int width, int height)
 {
     this->width = width;
     this->height = height;
-    this->app = app;
 };
 
 IOSGraphics::~IOSGraphics() {};
     
-GraphicsInterface* createIOSGraphics(int width, int height, IOSApplication * app)
+GraphicsInterface* createIOSGraphics(int width, int height)
 {
-    return new IOSGraphics(width, height, app);
+    return new IOSGraphics(width, height);
 };
     
 }

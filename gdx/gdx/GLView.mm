@@ -14,6 +14,7 @@
 @implementation GLView
 
 const bool forceES1 = false;
+gdx::ApplicationListenerInterface* appListener;
 
 + (Class) layerClass
 {
@@ -24,6 +25,7 @@ const bool forceES1 = false;
 {
     gdx::ApplicationConfiguration *config = new gdx::ApplicationConfiguration();
     config->useGLES20 = true;
+    appListener = listener;
     
     self->app = gdx::createIOSApplication(listener, config);
     
@@ -55,6 +57,9 @@ const bool forceES1 = false;
         [context renderbufferStorage:GL_RENDERBUFFER fromDrawable:eaglLayer];
         
 //        renderingEngine->Initialize(CGRectGetWidth(frame), CGRectGetHeight(frame));
+        
+        appListener->create();
+        appListener->resize(CGRectGetWidth(frame), CGRectGetHeight(frame));
         
         [self drawView:nil];
         
@@ -98,17 +103,35 @@ const bool forceES1 = false;
 - (void) drawView: (CADisplayLink*) displayLink
 {
     if (displayLink != nil) {
+        // TODO - need to do something with this to inject it into the Graphics instance
         float elapsedSeconds = displayLink.timestamp - timestamp;
         timestamp = displayLink.timestamp;
     }
-    
-    // rendering needs to come here
+
+    // delegating rendering to the application listener
+    appListener->render();
     
     [context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
+- (void) pause
+{
+    if (appListener) {
+        appListener->pause();
+    }
+}
+
+- (void) resume
+{
+    if (appListener) {
+        appListener->resume();
+    }
+}
+
 - (void)dealloc
 {
+    appListener->dispose();
+    
     if ([EAGLContext currentContext] == context)
         [EAGLContext setCurrentContext:nil];
     
@@ -117,13 +140,5 @@ const bool forceES1 = false;
     [super dealloc];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

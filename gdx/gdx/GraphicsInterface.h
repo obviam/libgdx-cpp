@@ -34,7 +34,7 @@ class DisplayMode
         bitsPerPixel(_bitsPerPixel) {}
 };
 
-class GraphicsInterface* createIOSGraphics(int width, int height, ApplicationInterface * app);
+class GraphicsInterface* createIOSGraphics(int width, int height);
     
 class GraphicsInterface
 {

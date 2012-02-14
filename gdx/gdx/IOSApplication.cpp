@@ -41,7 +41,7 @@ IOSApplication::IOSApplication()
 
 void IOSApplication::initialize(ApplicationListenerInterface* listener, ApplicationConfiguration* config)
 {
-//    graphics = createIOSGraphics(640, 960);
+    graphics = createIOSGraphics(640, 960);
 };
 
 GraphicsInterface* IOSApplication::getGraphics()
