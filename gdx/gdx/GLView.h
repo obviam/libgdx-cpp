@@ -12,7 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
-#import "GLViewInterface.h"
+#import "GraphicsInterface.h"
 
 @interface GLView : UIView {
 @private

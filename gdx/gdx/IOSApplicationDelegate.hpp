@@ -14,7 +14,7 @@
 {
     UIWindow*                   m_window;
     GLView*                     m_view;
-    gdx::ApplicationInterface*  m_app;
+    gdx::ApplicationInterface*  app;
 }
 
 @property (strong, nonatomic) UIWindow *m_window;

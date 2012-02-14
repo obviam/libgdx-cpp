@@ -98,8 +98,8 @@ void drawView (void * glViewInstance, float elapsed) {
 - (void) drawView: (CADisplayLink*) displayLink
 {
     if (displayLink != nil) {
-        float elapsedSeconds = displayLink.timestamp - timestamp;
-        timestamp = displayLink.timestamp;
+//        float elapsedSeconds = displayLink.timestamp - timestamp;
+//        timestamp = displayLink.timestamp;
     }
     
     // rendering needs to come here

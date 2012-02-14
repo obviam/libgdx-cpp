@@ -33,6 +33,8 @@ private:
 protected:
     IOSApplication* app;
 public:
+    IOSGraphics(int width, int height, IOSApplication * app);
+    ~IOSGraphics();
     bool const isGL11Available()
     {
         return true;
@@ -128,6 +130,20 @@ public:
     {
         // nuffin'
     };
+};
+    
+IOSGraphics::IOSGraphics(int width, int height, IOSApplication * app)
+{
+    this->width = width;
+    this->height = height;
+    this->app = app;
+};
+
+IOSGraphics::~IOSGraphics() {};
+    
+GraphicsInterface* createIOSGraphics(int width, int height, IOSApplication * app)
+{
+    return new IOSGraphics(width, height, app);
 };
     
 }

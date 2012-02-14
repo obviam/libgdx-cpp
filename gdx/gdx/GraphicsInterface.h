@@ -9,14 +9,18 @@
 #ifndef gdx_GraphicsInterface_h
 #define gdx_GraphicsInterface_h
 
+#include "ApplicationInterface.h"
+
 namespace gdx 
 {
 
+class ApplicationInterface;
+    
 enum GraphicsType {
     kIOSGL, kDesktopGL
 };
 
-struct DisplayMode
+class DisplayMode
 {
     const int width;
     const int height;
@@ -30,7 +34,9 @@ struct DisplayMode
         bitsPerPixel(_bitsPerPixel) {}
 };
 
-struct GraphicsInterface
+class GraphicsInterface* createIOSGraphics(int width, int height, ApplicationInterface * app);
+    
+class GraphicsInterface
 {
     virtual bool const isGL11Available() = 0;
     virtual bool const isGL20Available() = 0;

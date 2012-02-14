@@ -12,9 +12,11 @@
 
 @synthesize m_window = _window;
 
-- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [app setStatusBarHidden:YES];
+    self->m_app = gdx::createIOSApplication();
+    
+    [application setStatusBarHidden:YES];
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     

@@ -9,7 +9,7 @@
 #include <iostream>
 #include "ApplicationInterface.h"
 #include "ApplicationListenerInterface.h"
-#include "IOSGraphics.cpp"
+#include "GraphicsInterface.h"
 
 namespace gdx
 {
@@ -31,16 +31,28 @@ private:
 public:
     IOSApplication();
     void initialize(ApplicationListenerInterface* listener, IOSApplicationConfiguration* config);
+    GraphicsInterface* getGraphics();
 };
 
+ApplicationInterface* createIOSApplication()
+{
+    return new IOSApplication();
+}
+    
 // ~ implementations
 IOSApplication::IOSApplication()
 {
+    printf("IOSApplication created\n");
 };
 
 void IOSApplication::initialize(ApplicationListenerInterface* listener, IOSApplicationConfiguration* config)
 {
-    graphics = new IOSGraphics();
+//    graphics = createIOSGraphics(640, 960);
+};
+
+GraphicsInterface* IOSApplication::getGraphics()
+{
+    return graphics;
 };
 
 }

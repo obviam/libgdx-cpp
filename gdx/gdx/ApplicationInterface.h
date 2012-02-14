@@ -14,16 +14,20 @@
 namespace gdx
 {
 
+class GraphicsInterface;
+
+enum ApplicationType {
+    kDesktop,
+    kIOS,
+    kAndroid
+};
+
+class ApplicationInterface* createIOSApplication();
+    
 class ApplicationInterface
 {
 public:
-    enum ApplicationType {
-        Desktop,
-        iOS,
-        Android
-    };
     virtual GraphicsInterface* getGraphics() = 0;
-    
     virtual ~ApplicationInterface() {}
     
 protected:

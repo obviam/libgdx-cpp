@@ -27,7 +27,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "117"
-         endingLineNumber = "117">
+         endingLineNumber = "117"
+         landmarkName = "class GraphicsInterface"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
@@ -39,7 +41,9 @@
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "27"
-         endingLineNumber = "27">
+         endingLineNumber = "27"
+         landmarkName = "DisplayMode(int _width, int _height, int _refreshRate, int _bitsPerPixel)"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
