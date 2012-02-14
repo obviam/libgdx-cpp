@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "gdx/gdx/GLView.mm"
-         timestampString = "350327366.685928"
+         timestampString = "350939083.183521"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "22"
-         endingLineNumber = "22"
+         startingLineNumber = "23"
+         endingLineNumber = "23"
          landmarkName = "@implementation GLView"
          landmarkType = "3">
       </FileBreakpoint>
@@ -23,11 +23,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "gdx/gdx/GraphicsInterface.h"
-         timestampString = "350585982.365708"
+         timestampString = "350939083.183521"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "117"
-         endingLineNumber = "117"
+         startingLineNumber = "123"
+         endingLineNumber = "123"
          landmarkName = "class GraphicsInterface"
          landmarkType = "3">
       </FileBreakpoint>
@@ -37,11 +37,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "gdx/gdx/GraphicsInterface.h"
-         timestampString = "350584813.699211"
+         timestampString = "350939083.183521"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "27"
-         endingLineNumber = "27"
+         startingLineNumber = "31"
+         endingLineNumber = "31"
          landmarkName = "DisplayMode(int _width, int _height, int _refreshRate, int _bitsPerPixel)"
          landmarkType = "5">
       </FileBreakpoint>
@@ -75,13 +75,27 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "gdx/gdx/ApplicationAdapter.cpp"
-         timestampString = "350926194.750584"
+         timestampString = "350939083.183521"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
          landmarkName = "class ApplicationAdapter"
          landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "gdx/gdx/SimpleRendererGL2.cpp"
+         timestampString = "350939787.461524"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "SimpleRendererGL2::render()"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

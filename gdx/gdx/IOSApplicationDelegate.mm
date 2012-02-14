@@ -7,6 +7,7 @@
 //
 
 #import "IOSApplicationDelegate.h"
+#import "TestApp.h"
 
 @implementation IOSApplicationDelegate
 
@@ -18,12 +19,11 @@
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     
-    self.window = [[UIWindow alloc] initWithFrame:screenBounds];
+    self.m_window = [[UIWindow alloc] initWithFrame:screenBounds];
     
-    // create the listener
-    gdx::ApplicationListenerInterface *listener = gdx::createApplicationAdapter();
-    m_view = [[GLView alloc] initWithFrame:screenBounds applicationListener:listener];
-    m_view = [[GLView alloc] initWithFrame:screenBounds];
+    // create the app
+    TestApp *testApp = new TestApp();
+    m_view = [[GLView alloc] initWithFrame:screenBounds applicationListener:testApp];
     
     [self.m_window addSubview:m_view];
     [self.m_window makeKeyAndVisible];

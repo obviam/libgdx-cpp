@@ -46,20 +46,12 @@ gdx::ApplicationListenerInterface* appListener;
             return nil;
         }
         
-        if (api == kEAGLRenderingAPIOpenGLES1) {
-            NSLog(@"Using OpenGL ES 1.1");
-//            renderingEngine = CreateRenderer1();
-        } else {
-            NSLog(@"Using OpenGL ES 2.0");
-//            renderingEngine = CreateRenderer2();
-        }
-        
-        [context renderbufferStorage:GL_RENDERBUFFER fromDrawable:eaglLayer];
-        
-//        renderingEngine->Initialize(CGRectGetWidth(frame), CGRectGetHeight(frame));
+        // Context has been created...it should be good to go from here
         
         appListener->create();
         appListener->resize(CGRectGetWidth(frame), CGRectGetHeight(frame));
+
+        [context renderbufferStorage:GL_RENDERBUFFER fromDrawable:eaglLayer];
         
         [self drawView:nil];
         
@@ -69,7 +61,8 @@ gdx::ApplicationListenerInterface* appListener;
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(drawView:)];
         
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-        
+
+/*
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
         
         [[NSNotificationCenter defaultCenter] 
@@ -77,24 +70,8 @@ gdx::ApplicationListenerInterface* appListener;
          selector:@selector(didRotate:) 
          name:UIDeviceOrientationDidChangeNotification 
          object:nil];
+ */
         
-        
-        //        GLuint framebuffer, renderbuffer;
-        //        glGenFramebuffersOES(1, &framebuffer);
-        //        glGenRenderbuffersOES(1, &renderbuffer);
-        //        
-        //        glBindFramebufferOES(GL_FRAMEBUFFER_OES, framebuffer);
-        //        glBindRenderbufferOES(GL_RENDERBUFFER_OES, renderbuffer);
-        //        
-        //        [m_context 
-        //            renderbufferStorage:GL_RENDERBUFFER_OES 
-        //            fromDrawable:eaglLayer];
-        //        
-        //        glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, renderbuffer);
-        //        
-        //        glViewport(0, 0, CGRectGetWidth(frame), CGRectGetWidth(frame));
-        //        
-        //        [self drawView];
     }
     return self;
 
